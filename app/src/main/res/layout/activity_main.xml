@@ -132,23 +132,16 @@
         app:layout_constraintTop_toBottomOf="@+id/range_text" />
 
     <ImageView
-        android:id="@+id/mainScreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginBottom="720dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:srcCompat="@drawable/car_icon" />
-
-    <ImageView
-        android:id="@+id/secondScreen"
+        android:id="@+id/settings_icon"
         android:layout_width="75dp"
         android:layout_height="92dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginBottom="708dp"
+        android:onClick="Clicked"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/mainScreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
         app:srcCompat="@drawable/settings_icon" />
 
     <TextView
@@ -191,139 +184,6 @@
         android:id="@+id/mainPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="imageView,rightTP_top,rightTP_bottom,leftTP_top,leftTP_bottom,battery_text,speed_text,speed_text2,range_text,range_text2,mainScreen,secondScreen,motorTemp,batteryTemp,timer" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/secondLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/mila_ui_settings_background__1_" />
-
-        <TextView
-            android:id="@+id/coolantPressure6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="536dp"
-            android:layout_marginBottom="86dp"
-            android:text="40"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="60sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-            android:id="@+id/amps6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="108dp"
-            android:layout_marginBottom="8dp"
-            android:text="15"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="96sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/text7"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-            android:id="@+id/text7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="77dp"
-            android:layout_marginBottom="118dp"
-            android:text="AMPS"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="60sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView18"
-            android:layout_width="75dp"
-            android:layout_height="92dp"
-            android:layout_marginStart="92dp"
-            app:layout_constraintStart_toEndOf="@+id/imageView19"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/settings_icon" />
-
-        <ImageView
-            android:id="@+id/imageView19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="84dp"
-            android:layout_marginBottom="740dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/car_icon" />
-
-        <TextView
-            android:id="@+id/motortemp6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="256dp"
-            android:layout_marginTop="112dp"
-            android:text="79 F"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="60sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView18" />
-
-        <TextView
-            android:id="@+id/battery6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="256dp"
-            android:layout_marginTop="594dp"
-            android:text="80 %"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="60sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/coolantTemp6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="212dp"
-            android:layout_marginEnd="464dp"
-            android:text="20 F"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="60sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.constraintlayout.widget.Group
-            android:id="@+id/secondPage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:constraint_referenced_ids="imageView17,coolantPressure6,amps6,text7,imageView18,imageView19,motortemp6,battery6,coolantTemp6" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="20dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:constraint_referenced_ids="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

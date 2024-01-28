@@ -1,16 +1,15 @@
 package ui30;
 
 import android.content.Intent;
-import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 //import java.swing.timer;
-import java.util.EventListener;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -38,15 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private long savedTime = 0;
     private Group mainPage;
 
-    //second Page initilizers
-    private View mainTab;
-    private TextView motorTemp2;
-    private TextView coolantTemp;
-    private TextView battery2;
-    private TextView coolantPressure;
-    private TextView amps;
-    private Group secondPage;
-
+    private Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,13 +49,7 @@ public class MainActivity extends AppCompatActivity {
         View overlay = findViewById(R.id.mainLayout);
         overlay.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
         //Giving button attributes to top icons to move between settings and main pages
-        settingTab = findViewById(R.id.secondScreen);
-//        settingTab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                openSettings();
-//            }
-//        });
+        settingTab = findViewById(R.id.settings_icon);
 
         // Initialize TextView variables here
         topRightTire = findViewById(R.id.rightTP_top);
@@ -76,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
         range = findViewById(R.id.range_text);
         batteryTemp = findViewById(R.id.batteryTemp);
         motorTemp = findViewById(R.id.motorTemp);
-        //testSwingTimer();
+
+        // set up timer
         chronometer = findViewById(R.id.timer);
         chronometer.setFormat("%s");
         chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
@@ -90,63 +76,14 @@ public class MainActivity extends AppCompatActivity {
                 chronometer.setText(formattedTime);
             }
         });
+
         chronometer.setBase(SystemClock.elapsedRealtime());
         chronometer.start();
-        //main group
-        mainPage = findViewById(R.id.mainPage);
-        mainPage.setVisibility(View.VISIBLE);
-
-        //second group
-        mainTab = findViewById(R.id.imageView19);
-        mainTab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mainPage.setVisibility(View.VISIBLE);
-                secondPage.setVisibility(View.INVISIBLE);
-
-            }
-        });
-        motorTemp = findViewById(R.id.motortemp6);
-        coolantTemp = findViewById(R.id.coolantTemp6);
-        battery = findViewById(R.id.battery6);
-        coolantPressure = findViewById(R.id.coolantPressure6);
-        amps = findViewById(R.id.amps6);
-        secondPage = findViewById(R.id.secondPage);
-        secondPage.setVisibility(View.INVISIBLE);
-
-        //use settings to manage the visibility of different layers
-        settingTab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mainPage.setVisibility(View.INVISIBLE);
-                secondPage.setVisibility(View.VISIBLE);
-
-            }
-        });
-
-
-
-
-        //textView.setOnClickListener(new View.OnClickListener());
-//        battery.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                boolean ye = true;
-//                int i = 0;
-//                battery.setText("69");
-////                while (ye) {
-////                    battery.setText(i);
-////                    i++;
-////                }
-//            }
-//        });
-
     }
     public void openSettings() {
         Intent intent = new Intent(this, MainSetting.class);
         startActivity(intent);
     }
-
 
     public void testSwingTimer() {
         final Handler handler = new Handler();
@@ -177,5 +114,9 @@ public class MainActivity extends AppCompatActivity {
             Timer t = new Timer("Timer");
             t.schedule(task, 0, 1000);
         }
+
+    public void Clicked(View view) {
+        openSettings();
     }
+}
     

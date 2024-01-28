@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0F1113"
-    tools:context=".MainActivity">
+    tools:context="ui30.MainSetting">
+
 
     <ImageView
         android:id="@+id/imageView4"
@@ -14,21 +15,52 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mila_ui_settings_background__1_" />
+        app:srcCompat="@drawable/mila_ui_settings_background__2_" />
+
+    <ImageView
+        android:id="@+id/battery_icon"
+        android:layout_width="402dp"
+        android:layout_height="490dp"
+        android:layout_marginTop="356dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:srcCompat="@drawable/battery_component" />
+
+    <TextView
+        android:id="@+id/battery3"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="80%"
+        android:textColor="#FFFFFF"
+        android:textSize="80sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/battery_icon"
+        app:layout_constraintEnd_toEndOf="@+id/battery_icon"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="@+id/battery_icon"
+        app:layout_constraintTop_toTopOf="@+id/battery_icon"
+        app:layout_constraintVertical_bias="0.484" />
 
     <TextView
         android:id="@+id/coolantPressure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="536dp"
-        android:layout_marginBottom="86dp"
-        android:text="40"
+        android:layout_width="131dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="376dp"
+        android:layout_marginBottom="168dp"
+        android:text="40 F"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView2" />
 
     <TextView
         android:id="@+id/amps"
@@ -59,21 +91,12 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="75dp"
-        android:layout_height="92dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginBottom="708dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:srcCompat="@drawable/settings_icon" />
-
-    <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/carIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginBottom="720dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginBottom="684dp"
+        android:onClick="Clicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:srcCompat="@drawable/car_icon" />
@@ -83,33 +106,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="256dp"
-        android:layout_marginTop="120dp"
         android:text="79 F"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="60sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
-
-    <TextView
-        android:id="@+id/battery3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="296dp"
-        android:text="80 %"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="60sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/motortemp"
-        app:layout_constraintTop_toBottomOf="@+id/motortemp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.282" />
 
     <TextView
         android:id="@+id/coolantTemp2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="468dp"
+        android:layout_width="124dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="428dp"
         android:text="20 F"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -117,4 +128,29 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/motortemp" />
+
+    <ImageView
+        android:id="@+id/coolant_icon"
+        android:layout_width="178dp"
+        android:layout_height="268dp"
+        android:layout_marginTop="116dp"
+        app:layout_constraintEnd_toStartOf="@+id/coolantTemp2"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:srcCompat="@drawable/thermo_red" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

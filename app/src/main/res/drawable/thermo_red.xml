@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:top="95dp"
+        android:width="65dp"
+        android:height="59dp"
+        android:gravity="center">
+        <shape
+            android:shape="oval">
+            <solid android:color="#D30000" />
+        </shape>
+    </item>
+    <item
+        android:bottom="40dp"
+        android:gravity="center">
+        <clip
+            android:drawable="@drawable/temp_bar"
+            android:id="@+id/temp_bar"
+            android:gravity="bottom"
+            android:clipOrientation="vertical" />
+    </item>
+    <item
+        android:drawable="@drawable/thermometer"
+        android:height="200dp"
+        android:width="200dp" >
+    </item>
+</layer-list>
