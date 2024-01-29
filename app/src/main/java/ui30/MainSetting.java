@@ -61,6 +61,7 @@ public class MainSetting extends AppCompatActivity {
         // ImageViews
         battery_icon = findViewById(R.id.battery_icon);
         coolant = findViewById(R.id.coolant_icon);
+        updateDisplayValues("40F", "69F", "40", "10PSI", "10A");
 
     }
 
